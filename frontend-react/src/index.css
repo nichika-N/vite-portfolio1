@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ✅ アニメーション用のカスタム設定 */
+
+/* ふわっと表示 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 左右にゆらゆら */
+@keyframes sway {
+  0%, 100% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+}
+
+/* 浮かぶようにふわふわ */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* 外側に光るエフェクト */
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.8),
+                0 0 24px rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 24px rgba(255, 255, 255, 1),
+                0 0 48px rgba(255, 255, 255, 0.8);
+  }
+}
+
+/* ✨ 光る文字用エフェクト */
+@keyframes glowText {
+  0%, 100% {
+    text-shadow:
+      0 0 10px rgba(255, 255, 255, 0.9),
+      0 0 20px rgba(255, 255, 255, 0.8),
+      0 0 30px rgba(255, 255, 255, 0.7);
+  }
+  50% {
+    text-shadow:
+      0 0 20px rgba(255, 255, 255, 1),
+      0 0 40px rgba(255, 255, 255, 1),
+      0 0 60px rgba(255, 255, 255, 0.9);
+  }
+}
+
+/* ✨ キラキラ光る縦線 */
+@keyframes glowLine {
+  0% {
+    box-shadow: 0 0 2px #3b82f6;
+    opacity: 0.7;
+  }
+  50% {
+    box-shadow: 0 0 8px #3b82f6;
+    opacity: 1;
+  }
+  100% {
+    box-shadow: 0 0 2px #3b82f6;
+    opacity: 0.7;
+  }
+}
+
+/* Tailwindクラスとして使えるように定義 */
+.animate-fadeIn {
+  animation: fadeIn 1s ease-out both;
+}
+.animate-sway {
+  animation: sway 2.5s ease-in-out infinite;
+}
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+.animate-glow-text {
+  animation: glowText 2s ease-in-out infinite;
+}
+.animate-glowLine {
+  animation: glowLine 2s ease-in-out infinite;
+}
+
+/* ✅ 背景画像の指定（固定） */
+body {
+  background-image: url('/images/flower-bg2.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
