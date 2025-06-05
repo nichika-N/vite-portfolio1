@@ -3,30 +3,22 @@ function Welcome() {
 
   return (
     <div
-      className="min-h-screen bg-cover bg-center flex flex-col items-center justify-start pt-32"
-      style={{ backgroundImage: "url('/images/flower-bg.png')" }}
+      className="min-h-screen bg-cover bg-center bg-[url('/images/flower-bg.png')] flex flex-col items-center justify-start pt-32"
     >
-      {/* タイトル：Send Flowersのまま */}
-      <h1
-        style={{
-          fontFamily: "'Send Flowers', cursive",
-          animation: "fadeIn 1.5s ease-out both, sway 2.5s ease-in-out infinite",
-        }}
-        className="text-white/70 text-9xl px-6 py-4 tracking-wide"
-      >
+      {/* タイトル：Send Flowers のまま */}
+      <h1 className="text-white/70 text-9xl px-6 py-4 tracking-wide font-flowers animate-fadeIn animate-sway">
         Portfolio
       </h1>
 
-      {/* 名前：Noto Sans JP に変更、文字サイズを半分に */}
+      {/* 名前：1文字ずつふわっと＋浮かぶ */}
       <div className="flex mb-6">
         {nameText.split("").map((char, index) => (
           <span
             key={index}
+            className="text-white/70 text-4xl px-1 tracking-wide font-noto"
             style={{
-              fontFamily: "'Noto Sans JP', sans-serif",
-              animation: `fadeIn 0.4s ease-out ${index * 0.1 + 1}s both, float 3.5s ease-in-out infinite`,
+              animation: `fadeIn 0.4s ease-out ${index * 0.1 + 1}s both, float 3.5s ease-in-out infinite`
             }}
-            className="text-white/70 text-4xl px-1 tracking-wide"
           >
             {char === " " ? "\u00A0" : char}
           </span>
